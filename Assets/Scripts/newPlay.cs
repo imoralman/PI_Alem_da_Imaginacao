@@ -22,6 +22,8 @@ public class newPlay : MonoBehaviour
     int _runHash = Animator.StringToHash("correndo");
     int _jumpHash = Animator.StringToHash("Pulo");
 
+  
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,7 @@ public class newPlay : MonoBehaviour
         _anim.SetFloat("VelocidadeY", _rig.velocity.y);
     }
 
-    void Move()
+    void Move() //Movimento do Persoangem 
     {
         _MoveH = Input.GetAxisRaw("Horizontal");
         _rig.velocity = new Vector2(_MoveH * _speed, _rig.velocity.y);
@@ -75,7 +77,7 @@ public class newPlay : MonoBehaviour
         }
     }
 
-    void Jump()
+    void Jump() //Pulo do Personagem
     {
         if (Input.GetAxisRaw("Jump") > 0 && _ground == true)
         { 
@@ -83,7 +85,7 @@ public class newPlay : MonoBehaviour
         }
     }
 
-    private void Flip()
+    private void Flip() // Flip do Personagem (Direita e Esquerda)
     {
         m_FacingRight = !m_FacingRight;
 
