@@ -104,7 +104,7 @@ public class newPlay : MonoBehaviour
             //time = 0f;
         }
 
-        if (_ativaTime == true && _paraShift == false)
+        if (_ativaTime == true)
         {
             _time += 1 * Time.deltaTime; //Contador de Tempo ao ativar o Dash
 
