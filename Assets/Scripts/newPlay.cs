@@ -25,6 +25,7 @@ public class newPlay : MonoBehaviour
 
 
 
+
     Animator _anim;
     int _runHash = Animator.StringToHash("correndo");
     int _jumpHash = Animator.StringToHash("Pulo");
@@ -103,7 +104,7 @@ public class newPlay : MonoBehaviour
             //time = 0f;
         }
 
-        if (_ativaTime == true)
+        if (_ativaTime == true && _paraShift == false)
         {
             _time += 1 * Time.deltaTime; //Contador de Tempo ao ativar o Dash
 
@@ -111,15 +112,22 @@ public class newPlay : MonoBehaviour
             {
                 _ativaTime = false;
                 _speed = 6f;
-                _time = 0;
+                _time = 0f;
             }
+            /*else if (_time >= .2f && _speed == 25f && _ground == false) //Dash CupHead e Hollow Knight
+            {
+                _ativaTime = false;
+                _speed = 0f;
+                _time = 0f;
+                
+            }*/
 
-            if(_time >= .2f && _speed == 25f && _ground == false)
+            if(_time >= .2f && _speed == 25f && _ground == false) //Dash Metroidvania 
             {
                 _rig.velocity += Vector3.down * 3;
                 _ativaTime = false;
                 _speed = 6f;
-                _time = 0;
+                _time = 0f;
             }
         }
     }
@@ -141,6 +149,7 @@ public class newPlay : MonoBehaviour
         if (col.gameObject.CompareTag("Ground"))
         {
             _ground = true;
+            _speed = 6f;
             
         }
     }
