@@ -34,7 +34,9 @@ public class SpawnPlataforma : MonoBehaviour
     {
         float distance = player.position.z - currentPlatformPoint.position.z;
 
-        if(distance >= 5)
+        if(distance >= 15) //Aqui tu modifica a distancia entre o ponto final e o player. 
+        //Se a distancia do player for maior que a posição do Ponto Final o cenário vai desaparecer.
+        //Então se o player passar 15 de distancia do ponto, o cenário vai lá pra frente!
         {
             Recicla(currentPlatforms[platformIndex].gameObject);
             platformIndex++;
