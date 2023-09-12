@@ -260,7 +260,6 @@ GameObject:
   - component: {fileID: 7035107110097457697}
   - component: {fileID: 7230112736738443553}
   - component: {fileID: 4853324553465812135}
-  - component: {fileID: 8479691409267177077}
   m_Layer: 0
   m_Name: Terrain1
   m_TagString: Untagged
@@ -343,20 +342,6 @@ TerrainCollider:
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: f5f544df4023bc14997d44cea6f4a8c7, type: 2}
   m_EnableTreeColliders: 1
---- !u!182 &8479691409267177077
-WindZone:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512593584085399510}
-  m_Enabled: 1
-  m_Mode: 0
-  m_Radius: 20
-  m_WindMain: 1
-  m_WindTurbulence: 0.005
-  m_WindPulseMagnitude: 0.5
-  m_WindPulseFrequency: 0.01
 --- !u!1 &1720344953222191818
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +617,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 12.651895, y: 3.3200002, z: 25.976309}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1.0011046}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3888680368562075423}
