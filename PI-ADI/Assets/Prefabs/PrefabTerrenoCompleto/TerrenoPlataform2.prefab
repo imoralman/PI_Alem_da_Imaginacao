@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 7712715338519007015}
   - component: {fileID: 8399574695270156356}
   - component: {fileID: 1465758912544757421}
-  - component: {fileID: 8267830091266441106}
+  - component: {fileID: 7294709849524604858}
   m_Layer: 0
   m_Name: TerrenoPlataform2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -88,7 +88,7 @@ Terrain:
   m_EnableHeightmapRayTracing: 1
   m_EnableTreesAndDetailsRayTracing: 0
   m_TreeMotionVectorModeOverride: 3
---- !u!154 &8267830091266441106
+--- !u!154 &7294709849524604858
 TerrainCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +98,7 @@ TerrainCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
