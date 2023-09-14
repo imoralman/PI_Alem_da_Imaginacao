@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Bacon : MonoBehaviour
 {
-    [SerializeField] Collider _collider;
+    private Rigidbody _rb;
+    [SerializeField] float _speed;
+
     // Start is called before the first frame update
     void Start()
     {
-        _collider = GetComponent<Collider>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position -= new Vector3(0, 0, _speed) * Time.deltaTime;
     }
 }
