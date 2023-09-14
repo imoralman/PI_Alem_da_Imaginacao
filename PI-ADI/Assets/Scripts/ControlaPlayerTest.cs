@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.InputSystem;
 
 public class ControlaPlayerTest : MonoBehaviour
 {
@@ -12,9 +13,9 @@ public class ControlaPlayerTest : MonoBehaviour
     [SerializeField] bool checkChao = false;
     [SerializeField] bool jump = false;
 
-    Vector3 velocity;
+    //Vector3 velocity;
 
-    [SerializeField] float _gravidade = -9f;
+    //[SerializeField] float _gravidade = -9f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,17 +27,19 @@ public class ControlaPlayerTest : MonoBehaviour
     void Update()
     {
         MovimentoPlayer();
-        
-        if(Input.GetKeyDown(KeyCode.Space) && checkChao == true)
-        {
-
-            _rb.AddForce(0, _jumpForce * 5, 0);
-            checkChao = false;
-            Debug.Log("testando");
-        }
+       
 
     }
 
+    public void SetPula(InputAction.CallbackContext value)
+    {
+        if (checkChao == true)
+        {
+            _rb.AddForce(0, _jumpForce * 500, 0);
+            checkChao = false;
+            Debug.Log("Tocou no Chão");
+        }
+    }
 
 
     void Gravidade()
@@ -51,7 +54,7 @@ public class ControlaPlayerTest : MonoBehaviour
         if(checkChao == true)
         {
             _rb.velocity = new Vector3(0, _rb.velocity.y, _speed);
-           
+        
         }
     }
 

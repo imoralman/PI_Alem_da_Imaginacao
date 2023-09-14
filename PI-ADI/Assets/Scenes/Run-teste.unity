@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 2481009}
   - component: {fileID: 2481012}
   - component: {fileID: 2481013}
+  - component: {fileID: 2481014}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -225,10 +226,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 0}
   _speed: 8
-  _jumpForce: 100
+  _jumpForce: 2
   checkChao: 0
   jump: 0
-  _gravidade: -9.807
 --- !u!54 &2481009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &2481012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -300,6 +300,64 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2481014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: eb0d74bbbd613a945b7a927cf37e7188, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b6f50f10-da81-4755-81ac-67321c246bba
+    m_ActionName: Player-Move/Teclado-WASD[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 49632f99-9775-4eea-a466-391c18380ef8
+    m_ActionName: Player-Move/Teclado-SETAS[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a4ab45d7-99be-4fb7-8a20-a1da756b5358
+    m_ActionName: Player-Move/Joystick
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2481008}
+        m_TargetAssemblyTypeName: ControlaPlayerTest, Assembly-CSharp
+        m_MethodName: SetPula
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 53f5b3cc-ca22-4650-8cb8-88201f208615
+    m_ActionName: Player-Move/Jump[/Keyboard/space]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player-Move
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &539442133
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,7 +1012,7 @@ Transform:
   m_GameObject: {fileID: 1597844231}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13011761, y: -0.68385756, z: 0.12699102, w: 0.70659864}
-  m_LocalPosition: {x: 34.01918, y: 15.641396, z: 12.391639}
+  m_LocalPosition: {x: 34.01918, y: 15.641393, z: 12.391639}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1165,7 +1223,7 @@ Transform:
   m_GameObject: {fileID: 1956842939}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13011761, y: -0.68385756, z: 0.12699102, w: 0.70659864}
-  m_LocalPosition: {x: 34.01918, y: 15.641396, z: 12.391639}
+  m_LocalPosition: {x: 34.01918, y: 15.641393, z: 12.391639}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
