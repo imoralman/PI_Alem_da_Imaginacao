@@ -23,7 +23,7 @@ public class SpawnPlataforma : MonoBehaviour
         {
             Transform p = Instantiate(platforms[i], new Vector3(0, 0, i * 45), transform.rotation).transform;
             currentPlatforms.Add(p);
-            offset += 40;
+            offset += 45;
         }
 
         currentPlatformPoint = currentPlatforms[platformIndex].GetComponent<Platforms>().Point;

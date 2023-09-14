@@ -13,9 +13,8 @@ public class ControlaPlayerTest : MonoBehaviour
     [SerializeField] bool checkChao = false;
     [SerializeField] bool jump = false;
 
-    //Vector3 velocity;
 
-    //[SerializeField] float _gravidade = -9f;
+    [SerializeField] float tempoInicia;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +25,12 @@ public class ControlaPlayerTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovimentoPlayer();
-       
+        tempoInicia += Time.deltaTime;
+        if(tempoInicia >= 2)
+        {
+            MovimentoPlayer();
+        }
+        
 
     }
 
@@ -39,13 +42,6 @@ public class ControlaPlayerTest : MonoBehaviour
             checkChao = false;
             Debug.Log("Tocou no Chão");
         }
-    }
-
-
-    void Gravidade()
-    {
-       // velocity.y += _gravidade * Time.deltaTime;
-       // _rb.AddForce(velocity);
     }
 
 
