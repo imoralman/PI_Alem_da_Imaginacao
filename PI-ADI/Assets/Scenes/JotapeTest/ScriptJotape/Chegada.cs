@@ -15,7 +15,7 @@ public class Chegada : MonoBehaviour
         if(other.gameObject.CompareTag("Chegada"))
         {
             Debug.Log("tocou no ponto");
-            SceneManager.LoadScene("Run-teste");
+            SceneManager.LoadScene("Run");
         }
     }
 
