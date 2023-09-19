@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class ControlaPlayerTest : MonoBehaviour
 {
+    [SerializeField] Animator _animPlayer;
+
     [SerializeField] Rigidbody _rb;
     [SerializeField] float _speed;
     [SerializeField] float _jumpForce;
@@ -25,11 +27,14 @@ public class ControlaPlayerTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animacaoPlayer();
+
         tempoInicia += Time.deltaTime;
         if(tempoInicia >= 2)
         {
             MovimentoPlayer();
         }
+
         
 
     }
@@ -47,11 +52,33 @@ public class ControlaPlayerTest : MonoBehaviour
 
     void MovimentoPlayer()
     {
-        if(checkChao == true)
+        if (checkChao == true)
         {
             _rb.velocity = new Vector3(0, _rb.velocity.y, _speed);
-        
+
         }
+    }
+
+    void animacaoPlayer()
+    {
+
+
+        if(tempoInicia > 2 && checkChao == true)
+        {
+            _animPlayer.Play("run");
+        }
+
+        if (tempoInicia < 2 && checkChao == true)
+        {
+            _animPlayer.Play("idle");
+        }
+        
+        if(checkChao == false)
+        {
+            _animPlayer.Play("jump");
+        }
+
+
     }
 
     private void OnTriggerEnter(Collider other)
