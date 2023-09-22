@@ -20,10 +20,15 @@ public class ControlaPlayerTest : MonoBehaviour
 
     [SerializeField] float tempoInicia;
 
+    [SerializeField] GameControl _gameControl;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+      //  _gameControl = Camera.main.GetComponent<GameControl>();
     }
 
     // Update is called once per frame
@@ -42,7 +47,7 @@ public class ControlaPlayerTest : MonoBehaviour
         
 
         tempoInicia += Time.deltaTime;
-        if(tempoInicia >= 2)
+        if(tempoInicia >= 2 && _gameControl._startGame)
         {
             MovimentoPlayer();
         }
@@ -57,7 +62,7 @@ public class ControlaPlayerTest : MonoBehaviour
         {
             _rb.AddForce(0, _jumpForce * 500, 0);
             checkChao = false;
-            Debug.Log("Tocou no Chão");
+           
         }
     }
 

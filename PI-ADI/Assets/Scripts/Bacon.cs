@@ -9,17 +9,19 @@ public class Bacon : MonoBehaviour
     [SerializeField] Transform _posIni;
     [SerializeField] int _checktime, _timeLimit, _timeCheck;
     [SerializeField] bool _checkMove;
+    [SerializeField] GameControl _gameControl;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _checktime = _timeLimit;
+       // _gameControl = Camera.main.GetComponent<GameControl>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_checkMove == false)
+        if (_checkMove == false && _gameControl._startGame)
         transform.position -= new Vector3(0, 0, _speed) * Time.deltaTime;
     }
 
