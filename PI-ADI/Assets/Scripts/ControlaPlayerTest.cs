@@ -8,8 +8,10 @@ public class ControlaPlayerTest : MonoBehaviour
 {
     [SerializeField] Animator _animPlayer;
 
+    [SerializeField] Morte _MortePlayer;
+
     [SerializeField] Rigidbody _rb;
-    [SerializeField] float _speed;
+    [SerializeField] public float _speed;
     [SerializeField] float _jumpForce;
 
     [SerializeField] bool checkChao = false;
@@ -27,7 +29,17 @@ public class ControlaPlayerTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        animacaoPlayer();
+        if(_MortePlayer.ativaMorte == false)
+        {
+            animacaoPlayer();
+        }
+
+        if (_MortePlayer.ativaMorte == true)
+        {
+            _animPlayer.Play("hitporco");
+            _speed = 0;
+        }
+        
 
         tempoInicia += Time.deltaTime;
         if(tempoInicia >= 2)
@@ -62,7 +74,6 @@ public class ControlaPlayerTest : MonoBehaviour
     void animacaoPlayer()
     {
 
-
         if(tempoInicia > 2 && checkChao == true)
         {
             _animPlayer.Play("run");
@@ -77,6 +88,7 @@ public class ControlaPlayerTest : MonoBehaviour
         {
             _animPlayer.Play("jump");
         }
+
 
 
     }
