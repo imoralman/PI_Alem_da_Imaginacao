@@ -338,7 +338,19 @@ MonoBehaviour:
     m_ActionId: 49632f99-9775-4eea-a466-391c18380ef8
     m_ActionName: Player-Move/Teclado-SETAS[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2481008}
+        m_TargetAssemblyTypeName: ControlaPlayerTest, Assembly-CSharp
+        m_MethodName: SetPula
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a4ab45d7-99be-4fb7-8a20-a1da756b5358
     m_ActionName: Player-Move/Joystick
   - m_PersistentCalls:
@@ -900,7 +912,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051264239}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 3
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
