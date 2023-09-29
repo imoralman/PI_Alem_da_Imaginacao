@@ -20,7 +20,8 @@ public class Pato : MonoBehaviour
     void Update()
     {
 
-        transform.position = new Vector3(_player.position.x, _player.position.y, _player.position.z - 2);
+
+        transform.position = new Vector3(_player.position.x, _player.position.y, _player.transform.position.z - 3);
 
     }
 }

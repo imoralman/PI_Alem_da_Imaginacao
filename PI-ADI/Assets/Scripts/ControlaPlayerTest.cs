@@ -17,11 +17,11 @@ public class ControlaPlayerTest : MonoBehaviour
     [SerializeField] bool checkChao = false;
     [SerializeField] bool jump = false;
 
-
     [SerializeField] float tempoInicia;
 
     [SerializeField] GameControl _gameControl;
 
+    [SerializeField] public int _paginas = 0;
 
 
     // Start is called before the first frame update
@@ -52,12 +52,12 @@ public class ControlaPlayerTest : MonoBehaviour
             MovimentoPlayer();
         }
 
-        
 
     }
 
     public void SetPula(InputAction.CallbackContext value)
     {
+        
         if (checkChao == true)
         {
             _rb.AddForce(0, _jumpForce * 500, 0);
@@ -103,9 +103,19 @@ public class ControlaPlayerTest : MonoBehaviour
         if(other.gameObject.CompareTag("Ground"))
         {
             checkChao = true;
-            
+
         }
+
+        if (other.gameObject.CompareTag("Paginas"))
+        {
+            _paginas += 1;
+            other.gameObject.SetActive(false);
+
+        }
+
     }
+
+
 
 }
 

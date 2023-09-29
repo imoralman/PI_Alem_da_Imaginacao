@@ -9,6 +9,7 @@ TagManager:
   - Chegada
   - InimigoPlat
   - InimigoObst
+  - Paginas
   layers:
   - Default
   - TransparentFX
