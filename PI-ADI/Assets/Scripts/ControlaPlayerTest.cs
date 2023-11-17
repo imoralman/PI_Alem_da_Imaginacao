@@ -6,11 +6,14 @@ using UnityEngine.InputSystem;
 
 public class ControlaPlayerTest : MonoBehaviour
 {
+    [SerializeField] AudioSource[] _sons;
+
+    [SerializeField] Rigidbody _rb;
     [SerializeField] Animator _animPlayer;
 
     [SerializeField] Morte _MortePlayer;
 
-    [SerializeField] Rigidbody _rb;
+    
     [SerializeField] public float _speed;
     [SerializeField] float _jumpForce;
 
@@ -22,6 +25,10 @@ public class ControlaPlayerTest : MonoBehaviour
     [SerializeField] GameControl _gameControl;
 
     [SerializeField] public int _paginas = 0;
+
+
+
+    //AudioDePassos
 
 
     // Start is called before the first frame update
@@ -60,6 +67,7 @@ public class ControlaPlayerTest : MonoBehaviour
         
         if (checkChao == true)
         {
+            _sons[0].Play();
             _rb.AddForce(0, _jumpForce * 500, 0);
             checkChao = false;
            
@@ -108,6 +116,7 @@ public class ControlaPlayerTest : MonoBehaviour
 
         if (other.gameObject.CompareTag("Paginas"))
         {
+            _sons[1].Play();
             _paginas += 1;
             other.gameObject.SetActive(false);
 

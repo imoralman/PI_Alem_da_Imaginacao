@@ -11,6 +11,8 @@ public class Bacon : MonoBehaviour
     [SerializeField] bool _checkMove;
     [SerializeField] GameControl _gameControl;
 
+    [SerializeField] AudioSource _som;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,6 +25,7 @@ public class Bacon : MonoBehaviour
     {
         if (_checkMove == false && _gameControl._startGame)
         transform.position -= new Vector3(0, 0, _speed) * Time.deltaTime;
+
     }
 
     void InimigoOn_1()
@@ -50,4 +53,7 @@ public class Bacon : MonoBehaviour
         _checkMove = false;
         transform.position = _posIni.position;
     }
+
+
+
 }

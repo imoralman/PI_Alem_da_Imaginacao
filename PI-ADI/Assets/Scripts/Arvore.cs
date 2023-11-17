@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Arvore : MonoBehaviour
 {
-
+    [SerializeField] AudioSource _som;
     [SerializeField] Rigidbody _rb;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class Arvore : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            _som.Play();
             _rb.useGravity = true;
         }
     }

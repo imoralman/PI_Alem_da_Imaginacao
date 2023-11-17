@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Morte : MonoBehaviour
 {
     [SerializeField] ControlaPlayerTest _velocidadePlayer;
+    [SerializeField] AudioSource _somHit;
+
     public bool ativaMorte = false;
 
     // Start is called before the first frame update
@@ -40,6 +42,7 @@ public class Morte : MonoBehaviour
         IEnumerator TempoDeMorte()
         {
             ativaMorte = true;
+            _somHit.Play();
             yield return new WaitForSeconds(1.5f);
             SceneManager.LoadScene("Run");
         }

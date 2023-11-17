@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuPrincipalManager : MonoBehaviour
 {
@@ -31,4 +32,6 @@ public class MenuPrincipalManager : MonoBehaviour
     {
         SceneManager.LoadScene("Run");
     }
+
+
 }
