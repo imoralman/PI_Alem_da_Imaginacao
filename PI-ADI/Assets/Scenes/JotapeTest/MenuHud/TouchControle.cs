@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Logo : MonoBehaviour
+public class TouchControle : MonoBehaviour
 {
+
+    [SerializeField] GameObject _touch;
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(TouchTime());
     }
 
     // Update is called once per frame
@@ -18,17 +20,10 @@ public class Logo : MonoBehaviour
     }
 
 
-    public void Menu()
+    IEnumerator TouchTime()
     {
-        StartCoroutine(TempoMenu());
+        yield return new WaitForSeconds(2f);
+        _touch.SetActive(true);
     }
-
-
-    IEnumerator TempoMenu()
-    {
-        yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene("Menu");
-    }
-
 
 }
