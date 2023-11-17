@@ -13,7 +13,7 @@ public class Score : MonoBehaviour
 
     private void Update()
     {
-        _score.text = "Score: " + _pontos._paginas.ToString();
+        _score.text = "Paginas: " + _pontos._paginas.ToString();
     }
 
 
