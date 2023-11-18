@@ -21,7 +21,7 @@ public class Pato : MonoBehaviour
     {
 
 
-        transform.position = new Vector3(_player.position.x, _player.position.y, _player.transform.position.z - 3);
+        transform.position = new Vector3(_player.position.x, transform.position.y, _player.transform.position.z - 3);
 
     }
 }
